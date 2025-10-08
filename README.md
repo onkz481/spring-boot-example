@@ -1,2 +1,2 @@
 # spring-boot-example
-Spring Boot のサンプルプロジェクトです。
+Spring Boot の学習用サンプルプロジェクトです。
