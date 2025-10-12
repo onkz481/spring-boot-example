@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,16 +26,19 @@ public class User {
 	@Column(name = "email", nullable = false, length = 100, unique = true)
 	private String email;
 	
-	@Column(name = "created_at", nullable = false)
-	private String createdAt;
+	@Column(name = "created_at", nullable = true, updatable = false, insertable = false, columnDefinition = "DATETIME")
+	private LocalDateTime createdAt;
 	
-	@Column(name = "updated_at", nullable = false)
-	private String updatedAt;
+	@Column(name = "updated_at", nullable = true, updatable = false, insertable = false, columnDefinition = "DATETIME")
+	private LocalDateTime updatedAt;
 	
 	
-	public User() {}
+	public User() {
+	}
 	
 	public User(String name, String email) {
+		this();
+		
 		this.name = name;
 		this.email = email;
 	}
